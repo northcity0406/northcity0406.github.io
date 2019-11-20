@@ -444,164 +444,6 @@ JAVA SPI的扩展类加载失败可能会丢失异常信
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/JAVA SPI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="NorthCity  gf574723691@163.com">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NorthCity">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/20/JAVA SPI/" itemprop="url">JAVA SPI原理分析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-20T17:30:27+08:00">
-                2019-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/" itemprop="url" rel="index">
-                    <span itemprop="name">JAVA</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          1.什么是SPI?
-SPI 全称为 (Service Provider Interface) ，是JDK内置的一种服务提供发现机制。SPI是一种动态替换发现的机制， 比如有个接口，想运行时动态的给它添加实现，你只需要添加一个实现。我们经常遇到的就是java.sql.Driver接口，其他不同厂商可以
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/20/JAVA SPI/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	
-	<div>
-      
-	</div>
-		
-   <!--<div>
-      
-	</div>-->
-
-    
-
-    
-	
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/JAVA annotation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -760,6 +602,164 @@ SPI 全称为 (Service Provider Interface) ，是JDK内置的一种服务提供�
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/JAVA SPI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NorthCity  gf574723691@163.com">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NorthCity">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/20/JAVA SPI/" itemprop="url">JAVA SPI原理分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-20T17:30:27+08:00">
+                2019-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1.什么是SPI?
+SPI 全称为 (Service Provider Interface) ，是JDK内置的一种服务提供发现机制。SPI是一种动态替换发现的机制， 比如有个接口，想运行时动态的给它添加实现，你只需要添加一个实现。我们经常遇到的就是java.sql.Driver接口，其他不同厂商可以
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/20/JAVA SPI/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+	</div>
+		
+   <!--<div>
+      
+	</div>-->
+
+    
+
+    
+	
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/Ubuntu-zsh/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -857,7 +857,7 @@ SPI 全称为 (Service Provider Interface) ，是JDK内置的一种服务提供�
 sudo apt-get install zsh
 
 2.配置
-wget –no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | shgit clon
+wget —no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | shgit clon
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1176,9 +1176,9 @@ sudo dpkg -i hostapd_1.0-2ubuntu5_amd64.d
       
         
           
-          ###1 . 检查vim是否支持python经检查，发现vim不支持python2
-###2. 下载vim8源码1git clone https://github.com/vim/vim.git
-###2 . 编译安装vim81234cd vim/srcmake clean./configure -
+          1 . 检查vim是否支持python经检查，发现vim不支持python2
+2. 下载vim8源码1git clone https://github.com/vim/vim.git
+2 . 编译安装vim81234cd vim/srcmake clean./configure --with-fea
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1493,9 +1493,9 @@ sudo dpkg -i hostapd_1.0-2ubuntu5_amd64.d
       
         
           
-          更新的数据中有中文，出现如下错误： 
+           更新的数据中有中文，出现如下错误： 
 
-OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)
+OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1816,9 +1816,9 @@ sudo apt-g
       
         
           
-          如果这是你第一次使用Django，你需要完成一些初始化设置。 你需要自己用代码来创建一个Django项目——一个Django框架开发的网站，创建项目后我们需要的配置的东西，包括数据库的配置、针对Django的配置选项和app的配置选项。
+            如果这是你第一次使用Django，你需要完成一些初始化设置。 你需要自己用代码来创建一个Django项目——一个Django框架开发的网站，创建项目后我们需要的配置的东西，包括数据库的配置、针对Django的配置选项和app的配置选项。
 
-cd Workspace/Python/PythonWeb 
+cd Workspace/Python/PythonWe
           ...
           <!--noindex-->
           <div class="post-button text-center">
