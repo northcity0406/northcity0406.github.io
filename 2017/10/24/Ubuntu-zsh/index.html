@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Ubuntu,vim,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="NorthCity" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="1.安装 sudo apt-get install zsh  2.配置 wget –no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | shgit clone git://github.com/robbyrussell/oh-my-zsh.git ~/.o">
+<meta name="keywords" content="Ubuntu,vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu zsh配置">
+<meta property="og:url" content="http://yoursite.com/2017/10/24/Ubuntu-zsh/index.html">
+<meta property="og:site_name" content="NorthCity">
+<meta property="og:description" content="1.安装 sudo apt-get install zsh  2.配置 wget –no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | shgit clone git://github.com/robbyrussell/oh-my-zsh.git ~/.o">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-20T09:30:27.622Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu zsh配置">
+<meta name="twitter:description" content="1.安装 sudo apt-get install zsh  2.配置 wget –no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | shgit clone git://github.com/robbyrussell/oh-my-zsh.git ~/.o">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/24/Ubuntu-zsh/">
+
+
+
+
+
+  <title>Ubuntu zsh配置 | NorthCity</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/northcity0406"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">NorthCity</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">唯有爱和梦想不可辜负！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/Ubuntu-zsh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NorthCity  gf574723691@163.com">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NorthCity">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ubuntu zsh配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T10:46:08+08:00">
+                2017-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h1><blockquote>
+<p>sudo apt-get install zsh</p>
+</blockquote>
+<h1 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h1><blockquote>
+<p>wget –no-check-certificate <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="noopener">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh<br>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc<br>zsh</p>
+</blockquote>
+<h1 id="3-zsh配置文件"><a href="#3-zsh配置文件" class="headerlink" title="3.zsh配置文件"></a>3.zsh配置文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#color&#123;&#123;&#123;</span></span><br><span class="line"><span class="built_in">autoload</span> colors zsh/terminfo</span><br><span class="line"><span class="keyword">if</span> [[ <span class="string">"<span class="variable">$terminfo</span>[colors]"</span> -ge 8 ]]; <span class="keyword">then</span></span><br><span class="line">colors</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">for</span> color <span class="keyword">in</span> RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; <span class="keyword">do</span></span><br><span class="line"><span class="built_in">eval</span> _<span class="variable">$color</span>=<span class="string">'%&#123;$terminfo[bold]$fg[$&#123;(L)color&#125;]%&#125;'</span></span><br><span class="line"><span class="built_in">eval</span> <span class="variable">$color</span>=<span class="string">'%&#123;$fg[$&#123;(L)color&#125;]%&#125;'</span></span><br><span class="line">(( count = <span class="variable">$count</span> + 1 ))</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">FINISH=<span class="string">"%&#123;<span class="variable">$terminfo</span>[sgr0]%&#125;"</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令提示符 &#123;&#123;&#123;</span></span><br><span class="line"><span class="function"><span class="title">precmd</span></span> () &#123;</span><br><span class="line"><span class="built_in">local</span> count_db_wth_char=<span class="variable">$&#123;# $&#123;$&#123;(%):-%/&#125;</span>//[[:ascii:]]/&#125;&#125;</span><br><span class="line"><span class="built_in">local</span> leftsize=<span class="variable">$&#123;# $&#123;(%):-%M%/&#125;</span>&#125;+<span class="variable">$count_db_wth_char</span></span><br><span class="line"><span class="built_in">local</span> rightsize=<span class="variable">$&#123;# $&#123;(%):-%D %T &#125;</span>&#125;</span><br><span class="line">HBAR=<span class="string">" -"</span></span><br><span class="line"></span><br><span class="line">FILLBAR=<span class="string">"\$&#123;(l.((<span class="variable">$COLUMNS</span> - (<span class="variable">$leftsize</span> + <span class="variable">$rightsize</span> +2)))..<span class="variable">$&#123;HBAR&#125;</span>.)&#125;"</span></span><br><span class="line"></span><br><span class="line">RPROMPT=$(<span class="built_in">echo</span> <span class="string">"%(?..<span class="variable">$RED</span>%?<span class="variable">$FINISH</span>)"</span>)</span><br><span class="line">PROMPT=$(<span class="built_in">echo</span> <span class="string">"<span class="variable">$BLUE</span>%M<span class="variable">$GREEN</span>%/ <span class="variable">$WHITE</span><span class="variable">$&#123;(e)FILLBAR&#125;</span> <span class="variable">$MAGENTA</span>%D %T<span class="variable">$FINISH</span></span></span><br><span class="line"><span class="string"><span class="variable">$CYAN</span>%n <span class="variable">$_YELLOW</span>&gt;&gt;&gt;<span class="variable">$FINISH</span> "</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Emacs终端 中使用 Zsh 的一些设置</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="string">"<span class="variable">$TERM</span>"</span> == <span class="string">"dumb"</span> ]]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">setopt</span> No_zle</span><br><span class="line">PROMPT=<span class="string">'%n@%M %/</span></span><br><span class="line"><span class="string">&gt;&gt;'</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -F'</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 标题栏、任务栏样式&#123;&#123;&#123;</span></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$TERM</span> <span class="keyword">in</span> (*xterm*|*rxvt*|(dt|k|E)term)</span><br><span class="line"><span class="function"><span class="title">preexec</span></span> () &#123; <span class="built_in">print</span> -Pn <span class="string">"\e]0;%n@%M//%/\ <span class="variable">$1</span>\a"</span> &#125;</span><br><span class="line">;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 关于历史纪录的配置 &#123;&#123;&#123;</span></span><br><span class="line"><span class="comment"># 历史纪录条目数量</span></span><br><span class="line"><span class="built_in">export</span> HISTSIZE=1000</span><br><span class="line"><span class="comment"># 注销后保存的历史纪录条目数量</span></span><br><span class="line"><span class="built_in">export</span> SAVEHIST=1000</span><br><span class="line"><span class="comment"># 历史纪录文件</span></span><br><span class="line"><span class="built_in">export</span> HISTFILE=~/.zhistory</span><br><span class="line"><span class="comment"># 以附加的方式写入历史纪录</span></span><br><span class="line"><span class="built_in">setopt</span> INC_APPEND_HISTORY</span><br><span class="line"><span class="comment"># 如果连续输入的命令相同，历史纪录中只保留一个</span></span><br><span class="line"><span class="built_in">setopt</span> HIST_IGNORE_DUPS</span><br><span class="line"><span class="comment"># 为历史纪录中的命令添加时间戳</span></span><br><span class="line"><span class="built_in">setopt</span> EXTENDED_HISTORY</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用 cd 命令的历史纪录，cd -[TAB]进入历史路径</span></span><br><span class="line"><span class="built_in">setopt</span> AUTO_PUSHD</span><br><span class="line"><span class="comment"># 相同的历史路径只保留一个</span></span><br><span class="line"><span class="built_in">setopt</span> PUSHD_IGNORE_DUPS</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在命令前添加空格，不将此命令添加到纪录文件中</span></span><br><span class="line"><span class="comment"># setopt HIST_IGNORE_SPACE</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 杂项 &#123;&#123;&#123;</span></span><br><span class="line"><span class="comment"># 允许在交互模式中使用注释 例如：</span></span><br><span class="line"><span class="comment"># cmd # 这是注释</span></span><br><span class="line"><span class="built_in">setopt</span> INTERACTIVE_COMMENTS</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用自动 cd，输入目录名回车进入目录</span></span><br><span class="line"><span class="comment"># 稍微有点混乱，不如 cd 补全实用</span></span><br><span class="line"><span class="comment"># setopt AUTO_CD</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 扩展路径</span></span><br><span class="line"><span class="comment"># /v/c/p/p =&gt; /var/cache/pacman/pkg</span></span><br><span class="line"><span class="built_in">setopt</span> complete_in_word</span><br><span class="line"></span><br><span class="line"><span class="comment"># 禁用 core dumps</span></span><br><span class="line"><span class="built_in">limit</span> coredumpsize 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># Emacs风格 键绑定</span></span><br><span class="line"><span class="built_in">bindkey</span> -e</span><br><span class="line"><span class="comment"># 设置 [DEL]键 为向后删除</span></span><br><span class="line"><span class="built_in">bindkey</span> <span class="string">"\e[3~"</span> delete-char</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下字符视为单词的一部分</span></span><br><span class="line">WORDCHARS=<span class="string">'*?_-[]~=&amp;;!# $%^()&#123;&#125;&lt;&gt;'</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动补全功能 &#123;&#123;&#123;</span></span><br><span class="line"><span class="built_in">setopt</span> AUTO_LIST</span><br><span class="line"><span class="built_in">setopt</span> AUTO_MENU</span><br><span class="line"><span class="comment"># 开启此选项，补全时会直接选中菜单项</span></span><br><span class="line"><span class="comment"># setopt MENU_COMPLETE</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">autoload</span> -U compinit</span><br><span class="line">compinit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动补全缓存</span></span><br><span class="line"><span class="comment"># zstyle ':completion::complete:*' use-cache on</span></span><br><span class="line"><span class="comment"># zstyle ':completion::complete:*' cache-path .zcache</span></span><br><span class="line"><span class="comment"># zstyle ':completion:*:cd:*' ignore-parents parent pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动补全选项</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> verbose yes</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> menu select</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:*:default'</span> force-list always</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> select-prompt <span class="string">'%SSelect: lines: %L matches: %M [%p]'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:match:*'</span> original only</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion::prefix-1:*'</span> completer _complete</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:predict:*'</span> completer _complete</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:incremental:*'</span> completer _complete _correct</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> completer _complete _prefix _correct _prefix _match _approximate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 路径补全</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> expand <span class="string">'yes'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> squeeze-slashes <span class="string">'yes'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion::complete:*'</span> <span class="string">'\\'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 彩色补全菜单</span></span><br><span class="line"><span class="built_in">eval</span> $(dircolors -b)</span><br><span class="line"><span class="built_in">export</span> ZLSCOLORS=<span class="string">"<span class="variable">$&#123;LS_COLORS&#125;</span>"</span></span><br><span class="line"><span class="built_in">zmodload</span> zsh/complist</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> list-colors <span class="variable">$&#123;(s.:.)LS_COLORS&#125;</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:*:kill:*:processes'</span> list-colors <span class="string">'=(# b) # ([0-9]# )*=0=01;31'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修正大小写</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> matcher-list <span class="string">''</span> <span class="string">'m:&#123;a-zA-Z&#125;=&#123;A-Za-z&#125;'</span></span><br><span class="line"><span class="comment"># 错误校正</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> completer _complete _match _approximate</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:match:*'</span> original only</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:approximate:*'</span> max-errors 1 numeric</span><br><span class="line"></span><br><span class="line"><span class="comment"># kill 命令补全</span></span><br><span class="line">compdef pkill=killall</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:*:kill:*'</span> menu yes select</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:*:*:*:processes'</span> force-list always</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:processes'</span> <span class="built_in">command</span> <span class="string">'ps -au$USER'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 补全类型提示分组</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:matches'</span> group <span class="string">'yes'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*'</span> group-name <span class="string">''</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:options'</span> description <span class="string">'yes'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:options'</span> auto-description <span class="string">'%d'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:descriptions'</span> format $<span class="string">'\e[01;33m -- %d --\e[0m'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:messages'</span> format $<span class="string">'\e[01;35m -- %d --\e[0m'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:warnings'</span> format $<span class="string">'\e[01;31m -- No Matches Found --\e[0m'</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:corrections'</span> format $<span class="string">'\e[01;32m -- %d (errors: %e) --\e[0m'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  cd ~ 补全顺序</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:-tilde-:*'</span> group-order <span class="string">'named-directories'</span> <span class="string">'path-directories'</span> <span class="string">'users'</span> <span class="string">'expand'</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # 行编辑高亮模式 &#123;&#123;&#123;</span></span><br><span class="line"><span class="comment">#  Ctrl+@ 设置标记，标记和光标点之间为 region</span></span><br><span class="line">zle_highlight=(region:<span class="built_in">bg</span>=magenta <span class="comment"># 选中区域</span></span><br><span class="line">special:bold <span class="comment"># 特殊字符</span></span><br><span class="line">isearch:underline)<span class="comment"># 搜索时使用的关键字</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # 空行(光标在行首)补全 "cd " &#123;&#123;&#123;</span></span><br><span class="line">user-<span class="function"><span class="title">complete</span></span>()&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$BUFFER</span> <span class="keyword">in</span></span><br><span class="line"><span class="string">""</span> ) <span class="comment">#  空行填入 "cd "</span></span><br><span class="line">BUFFER=<span class="string">"cd "</span></span><br><span class="line"><span class="built_in">zle</span> end-of-line</span><br><span class="line"><span class="built_in">zle</span> expand-or-complete</span><br><span class="line">;;</span><br><span class="line"><span class="string">"cd "</span> ) <span class="comment">#  TAB + 空格 替换为 "cd ~"</span></span><br><span class="line">BUFFER=<span class="string">"cd ~"</span></span><br><span class="line"><span class="built_in">zle</span> end-of-line</span><br><span class="line"><span class="built_in">zle</span> expand-or-complete</span><br><span class="line">;;</span><br><span class="line"><span class="string">" "</span> )</span><br><span class="line">BUFFER=<span class="string">"!?"</span></span><br><span class="line"><span class="built_in">zle</span> end-of-line</span><br><span class="line">;;</span><br><span class="line"><span class="string">"cd --"</span> ) <span class="comment">#  "cd --" 替换为 "cd +"</span></span><br><span class="line">BUFFER=<span class="string">"cd +"</span></span><br><span class="line"><span class="built_in">zle</span> end-of-line</span><br><span class="line"><span class="built_in">zle</span> expand-or-complete</span><br><span class="line">;;</span><br><span class="line"><span class="string">"cd +-"</span> ) <span class="comment">#  "cd +-" 替换为 "cd -"</span></span><br><span class="line">BUFFER=<span class="string">"cd -"</span></span><br><span class="line"><span class="built_in">zle</span> end-of-line</span><br><span class="line"><span class="built_in">zle</span> expand-or-complete</span><br><span class="line">;;</span><br><span class="line">* )</span><br><span class="line"><span class="built_in">zle</span> expand-or-complete</span><br><span class="line">;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">zle</span> -N user-complete</span><br><span class="line"><span class="built_in">bindkey</span> <span class="string">"\t"</span> user-complete</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示 path-directories ，避免候选项唯一时直接选中</span></span><br><span class="line">cdpath=<span class="string">"/home"</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # 在命令前插入 sudo &#123;&#123;&#123;</span></span><br><span class="line"><span class="comment"># 定义功能</span></span><br><span class="line">sudo-command-<span class="function"><span class="title">line</span></span>() &#123;</span><br><span class="line">[[ -z <span class="variable">$BUFFER</span> ]] &amp;&amp; <span class="built_in">zle</span> up-history</span><br><span class="line">[[ <span class="variable">$BUFFER</span> != sudo\ * ]] &amp;&amp; BUFFER=<span class="string">"sudo <span class="variable">$BUFFER</span>"</span></span><br><span class="line"><span class="built_in">zle</span> end-of-line <span class="comment"># 光标移动到行末</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">zle</span> -N sudo-command-line</span><br><span class="line"><span class="comment"># 定义快捷键为： [Esc] [Esc]</span></span><br><span class="line"><span class="built_in">bindkey</span> <span class="string">"\e\e"</span> sudo-command-line</span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令别名 &#123;&#123;&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> -g ls=<span class="string">'ls -F --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> -g ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> -g la=<span class="string">'ls -a'</span></span><br><span class="line"><span class="built_in">alias</span> -g l=<span class="string">'ls'</span></span><br><span class="line"><span class="built_in">alias</span> -g grep=<span class="string">'grep --color=auto'</span></span><br><span class="line"><span class="comment"># alias -g history='history -fi'</span></span><br><span class="line"><span class="built_in">alias</span> -g ai=<span class="string">'sudo apt-get install'</span></span><br><span class="line"><span class="built_in">alias</span> -g aar=<span class="string">'sudo apt-get autoremove'</span></span><br><span class="line"><span class="built_in">alias</span> -g ap=<span class="string">'sudo apt-get purge'</span></span><br><span class="line"><span class="built_in">alias</span> -g aud=<span class="string">'sudo apt-get update'</span></span><br><span class="line"><span class="built_in">alias</span> -g aug=<span class="string">'sudo apt-get upgrade'</span></span><br><span class="line"><span class="built_in">alias</span> -g adu=<span class="string">'sudo apt-get dist-upgrade'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># [Esc][h] man 当前命令时，显示简短说明</span></span><br><span class="line"><span class="built_in">alias</span> run-help &gt;&amp;/dev/null &amp;&amp; <span class="built_in">unalias</span> run-help</span><br><span class="line"><span class="built_in">autoload</span> run-help</span><br><span class="line"></span><br><span class="line"><span class="comment"># 历史命令 top10</span></span><br><span class="line"><span class="comment"># alias top10='print -l $&#123;(o)history%% *&#125; | uniq -c | sort -nr | head -n 10'</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 路径别名 &#123;&#123;&#123;</span></span><br><span class="line"><span class="comment"># 进入相应的路径时只要 cd ~xxx</span></span><br><span class="line"><span class="built_in">hash</span> -d HIST=<span class="string">"<span class="variable">$HISTDIR</span>"</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#123;&#123;&#123;自定义补全</span></span><br><span class="line"><span class="comment"># 补全 ping</span></span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:ping:*'</span> hosts g.cn facebook.com</span><br><span class="line"><span class="comment"># 补全 ssh scp sftp 等</span></span><br><span class="line">my_accounts=(</span><br><span class="line">&#123;ly50247,osily,lg50247,root&#125;@&#123;192.168.1.1,192.168.0.1&#125;</span><br><span class="line">osily@localhost</span><br><span class="line">)</span><br><span class="line"><span class="built_in">zstyle</span> <span class="string">':completion:*:my-accounts'</span> users-hosts <span class="variable">$my_accounts</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># def pacman-color completion as pacman</span></span><br><span class="line"><span class="comment"># compdef pacman-color=pacman</span></span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#123;&#123;&#123; F1 计算器</span></span><br><span class="line">arith-eval-<span class="function"><span class="title">echo</span></span>() &#123;</span><br><span class="line">LBUFFER=<span class="string">"<span class="variable">$&#123;LBUFFER&#125;</span>echo \$(( "</span></span><br><span class="line">RBUFFER=<span class="string">" ))<span class="variable">$RBUFFER</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">zle</span> -N arith-eval-echo</span><br><span class="line"><span class="built_in">bindkey</span> <span class="string">"^[[11~"</span> arith-eval-echo</span><br><span class="line"><span class="comment"># &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # # # &#123;&#123;&#123;</span></span><br><span class="line"><span class="comment"># function timeconv &#123; date -d @$1 +"%Y-%m-%d %T" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # # # &#123;&#123;&#123;</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">command_not_found_handler</span></span>() &#123;</span><br><span class="line">python /usr/lib/<span class="built_in">command</span>-not-found <span class="variable">$1</span></span><br><span class="line"><span class="built_in">return</span> 0</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#  &#125;&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># #  END OF FILE # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #################</span></span><br><span class="line"><span class="comment"># vim:filetype=zsh foldmethod=marker autoindent expandtab shiftwidth=4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> http_proxy=http://192.168.187.145:80</span><br><span class="line"><span class="comment">#export JAVA_HOME="/usr/lib/jvm/java-6-sun"</span></span><br><span class="line"><span class="comment">#export JRE_HOME="/usr/lib/jvm/java-6-sun/jre"</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/home/osily/program/bin"</span></span><br><span class="line"><span class="comment">#exportCLASSPATH="$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:/home/osily/program/tomcat620/lib:/home/osily/program/tomcat620/lib/servlet-api.jar"</span></span><br><span class="line"><span class="built_in">alias</span> upg=<span class="string">"sudo apt-get update &amp;&amp; sudo apt-get upgrade"</span></span><br><span class="line"><span class="built_in">alias</span> qq=<span class="string">"nohup google-chrome --no-proxy-server --app=http://web.qq.com &gt;/dev/null 2&gt;/dev/null &amp;"</span></span><br><span class="line"><span class="comment">#alias tomstart="sudo ~/program/tomcat620/bin/startup.sh"</span></span><br><span class="line"><span class="comment">#alias tomshut="sudo ~/program/tomcat620/bin/shutdown.sh"</span></span><br><span class="line"><span class="comment">#alias js2="rhino"</span></span><br><span class="line"><span class="built_in">alias</span> gmusic=<span class="string">"google-chrome --no-proxy-server --app=http://g.top100.cn/12174704/html/player.html#loaded"</span></span><br><span class="line"><span class="built_in">alias</span> apa=<span class="string">"dpkg -l |grep ^rc|awk '&#123;print <span class="variable">$2</span>&#125;' |sudo xargs dpkg -P"</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        ﻿
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2017/10/24/Ubuntu-zsh/">Ubuntu zsh配置</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 NorthCity  gf574723691@163.com 的个人博客">NorthCity  gf574723691@163.com</a></p>
+  <p><span>发布时间:</span>2017年10月24日 - 10:10</p>
+  <p><span>最后更新:</span>2019年11月20日 - 17:11</p>
+  <p><span>原始链接:</span><a href="/2017/10/24/Ubuntu-zsh/" title="Ubuntu zsh配置">http://yoursite.com/2017/10/24/Ubuntu-zsh/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2017/10/24/Ubuntu-zsh/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>
+		
+   <!--<div>
+      
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="" alt="NorthCity  gf574723691@163.com wechat" style="width: 200px; max-width: 100%;"/>
+    <div></div>
+</div>
+
+      
+	</div>-->
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="NorthCity  gf574723691@163.com 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="NorthCity  gf574723691@163.com 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+	
+	<div>
+	  
+		﻿<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag"> <i class="fa fa-tag"></i> Ubuntu</a>
+          
+            <a href="/tags/vim/" rel="tag"> <i class="fa fa-tag"></i> vim</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/24/Ubuntu-Start-Wifi/" rel="next" title="Ubuntu 开启WiFi">
+                <i class="fa fa-chevron-left"></i> Ubuntu 开启WiFi
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/20/JAVA annotation/" rel="prev" title="JAVA注解原理解析和自定义注解">
+                JAVA注解原理解析和自定义注解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="NorthCity  gf574723691@163.com">
+            
+              <p class="site-author-name" itemprop="name">NorthCity  gf574723691@163.com</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/northcity0406" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="gf574723691@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/47d588867a1b" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/3929767451/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装"><span class="nav-number">1.</span> <span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-配置"><span class="nav-number">2.</span> <span class="nav-text">2.配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-zsh配置文件"><span class="nav-number">3.</span> <span class="nav-text">3.zsh配置文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NorthCity  gf574723691@163.com</span>
+
+  
+</div>
+
+
+	<div class="powered-by">
+		<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+		  本站访客数:<span id="busuanzi_value_site_uv"></span>
+		</span>
+	</div>
+
+  <!--<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>-->
+
+
+<!--
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+-->
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共12.7k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+	
+	<script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+	
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
