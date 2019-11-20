@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="更新的数据中有中文，出现如下错误：   OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)Request Method: POSTRequest URL: http://localhost">
+<meta name="description" content="更新的数据中有中文，出现如下错误：   OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)Request Method: POSTRequest URL: http://localhost:">
 <meta name="keywords" content="数据库,编码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建数据库时设置编码为UTF-8">
 <meta property="og:url" content="http://yoursite.com/2017/10/24/create-the-database-for-default-charset-utf-8/index.html">
 <meta property="og:site_name" content="NorthCity">
-<meta property="og:description" content="更新的数据中有中文，出现如下错误：   OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)Request Method: POSTRequest URL: http://localhost">
+<meta property="og:description" content="更新的数据中有中文，出现如下错误：   OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)Request Method: POSTRequest URL: http://localhost:">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-11-20T09:30:27.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建数据库时设置编码为UTF-8">
-<meta name="twitter:description" content="更新的数据中有中文，出现如下错误：   OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)Request Method: POSTRequest URL: http://localhost">
+<meta name="twitter:description" content="更新的数据中有中文，出现如下错误：   OperationalError at /admin/blog/post/add/(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)Request Method: POSTRequest URL: http://localhost:">
 
 
 
@@ -377,13 +377,17 @@
       
 
       
-        <pre><code> 更新的数据中有中文，出现如下错误： 
+        <pre><code>更新的数据中有中文，出现如下错误： 
 </code></pre><blockquote>
 <p>OperationalError at /admin/blog/post/add/<br>(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”)<br>Request Method: POST<br>Request URL: <a href="http://localhost:8000/admin/blog/post/add/" target="_blank" rel="noopener">http://localhost:8000/admin/blog/post/add/</a><br>Exception Type: OperationalError<br>Exception Value: </p>
+</blockquote>
+<blockquote>
 <p>(1366, “Incorrect string value: ‘\xE6\xB7\xB1\xE5\x85\xA5…’ for column ‘title’ at row 1”) </p>
+</blockquote>
+<blockquote>
 <p>Exception Location: C:\Python25\Lib\site-packages\MySQLdb\connections.py in defaulterrorhandler, line 35 </p>
 </blockquote>
-<pre><code>   类似这样的错误，应该是数据库表的charset和collation问题。尝试把所有表的charset改为utf-8, collation改为utf8-unicode-ci。如果还是不能解决，最好是重建数据库，然后修改数据库的属性，选择charset为utf-8,collation为utf8-unicode-ci。
+<pre><code>类似这样的错误，应该是数据库表的charset和collation问题。尝试把所有表的charset改为utf-8, collation改为utf8-unicode-ci。如果还是不能解决，最好是重建数据库，然后修改数据库的属性，选择charset为utf-8,collation为utf8-unicode-ci。
 </code></pre><p><strong>命令行：</strong></p>
 <blockquote>
 <p>create database news default charset utf8 collate utf8_unicode_ci;</p>
