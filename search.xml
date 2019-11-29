@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[一些坑]]></title>
     <url>%2F2019%2F11%2F29%2Fothers%2F</url>
     <content type="text"><![CDATA[1. Maven打jar包，设置主类1234567891011&lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;archive&gt; &lt;manifest&gt; &lt;mainClass&gt;com.northcity.cache.CacheApplication&lt;/mainClass&gt; &lt;/manifest&gt; &lt;/archive&gt; &lt;/configuration&gt;&lt;/plugin&gt; 2. SpringBoot yml文件设置jdbc的URL规范1234567spring: datasource: driver-class-name:com.mysql.cj.jdbc.Driver url:jdbc:mysql://172.30.213.213:3306/user?serverTimezone=UTC &amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false username:root password:"1234" //这里密码一定要用双引号包起来]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+      <tags>
+        <tag>others</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Dubbo SPI扩展原理和实践]]></title>
@@ -13,8 +19,8 @@
         <category>JAVA</category>
       </categories>
       <tags>
-        <tag>Dubbo</tag>
         <tag>JAVA</tag>
+        <tag>Dubbo</tag>
       </tags>
   </entry>
   <entry>
@@ -120,8 +126,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>python</tag>
+        <tag>django</tag>
         <tag>Web</tag>
       </tags>
   </entry>
@@ -133,8 +139,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>python</tag>
+        <tag>django</tag>
         <tag>Web</tag>
       </tags>
   </entry>

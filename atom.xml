@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-29T08:38:46.548Z</updated>
+  <updated>2019-11-29T08:40:15.429Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>一些坑</title>
     <link href="http://yoursite.com/2019/11/29/others/"/>
     <id>http://yoursite.com/2019/11/29/others/</id>
     <published>2019-11-29T08:35:44.035Z</published>
-    <updated>2019-11-29T08:38:46.548Z</updated>
+    <updated>2019-11-29T08:40:15.429Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Maven打jar包，设置主类"><a href="#1-Maven打jar包，设置主类" class="headerlink" title="1. Maven打jar包，设置主类"></a>1. Maven打jar包，设置主类</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-jar-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">archive</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">manifest</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">mainClass</span>&gt;</span>com.northcity.cache.CacheApplication<span class="tag">&lt;/<span class="name">mainClass</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">archive</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="2-SpringBoot-yml文件设置jdbc的URL规范"><a href="#2-SpringBoot-yml文件设置jdbc的URL规范" class="headerlink" title="2. SpringBoot yml文件设置jdbc的URL规范"></a>2. SpringBoot yml文件设置jdbc的URL规范</h1><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">spring:</span></span><br><span class="line"><span class="symbol">    datasource:</span></span><br><span class="line">        driver-class-name:com.mysql.cj.jdbc.Driver</span><br><span class="line"><span class="symbol">        url:</span>jdbc:mysql:<span class="comment">//172.30.213.213:3306/user?serverTimezone=UTC</span></span><br><span class="line">        &amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</span><br><span class="line"><span class="symbol">        username:</span>root</span><br><span class="line"><span class="symbol">        password:</span><span class="string">"1234"</span>   <span class="comment">//这里密码一定要用双引号包起来</span></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -34,6 +34,10 @@
     
     </summary>
     
+      <category term="others" scheme="http://yoursite.com/categories/others/"/>
+    
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
     
   </entry>
   
@@ -58,9 +62,9 @@
       <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
     
     
-      <category term="Dubbo" scheme="http://yoursite.com/tags/Dubbo/"/>
-    
       <category term="JAVA" scheme="http://yoursite.com/tags/JAVA/"/>
+    
+      <category term="Dubbo" scheme="http://yoursite.com/tags/Dubbo/"/>
     
   </entry>
   
@@ -309,9 +313,9 @@
       <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="django" scheme="http://yoursite.com/tags/django/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="django" scheme="http://yoursite.com/tags/django/"/>
     
       <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
     
@@ -338,9 +342,9 @@
       <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="django" scheme="http://yoursite.com/tags/django/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="django" scheme="http://yoursite.com/tags/django/"/>
     
       <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
     
